@@ -6,7 +6,7 @@ This toolkit allows you to download and configure 10m resolution terrain data (N
 
 If you just want the standard Washington/Oregon dataset:
 
-1.  Run `.\scripts\1_download_guide.ps1` and select **Option 1**.
+1.  Download the PNW data following the steps in [DOWNLOAD_GUIDE.md](./DOWNLOAD_GUIDE.md) (Step 4 details the PNW coords).
 2.  Download the files & move them to a folder.
 3.  Run `.\scripts\2_process_data.ps1 -SourceZipDir "path/to/downloads"`.
 4.  Run `.\scripts\3_auto_configure.ps1`.
@@ -17,16 +17,12 @@ To set up MeshRF for your own area (e.g., Texas, California, etc.):
 
 ### 1. Download Data
 
-Run:
+### 1. Download Data
 
-```powershell
-.\scripts\1_download_guide.ps1
-```
+Follow the steps in [DOWNLOAD_GUIDE.md](./DOWNLOAD_GUIDE.md).
 
-- Select **Option 2 (Custom Area)**.
-- Use the map tool in the browser to draw a box around your area.
-- **Tip**: Keep the selection reasonable (e.g., a few counties or a state) to avoid massive downloads.
-- Download all the ZIP files.
+1.  Open [DOWNLOAD_GUIDE.md](./DOWNLOAD_GUIDE.md) to see how to target your specific area.
+2.  Download the ZIP files as instructed.
 
 ### 2. Process Files
 
