@@ -13,13 +13,13 @@ This guide walks you through downloading the required elevation data using the U
 
 Navigate to the [USGS Downloader](https://apps.nationalmap.gov/downloader/). You should see a map interface.
 
-![USGS Interface](screenshots/step1-usgs.png)
+![USGS Interface](screenshots/step0-usgs.png)
 
 ## Step 2: Select Data Products
 
 On the left sidebar, check the box for **Elevation Products (3DEP)**.
 
-![Select Elevation](screenshots/step2-usgs.png)
+![Select Elevation](screenshots/step1-usgs.png)
 
 ## Step 3: Choose Resolution
 
@@ -27,28 +27,30 @@ Select **1/3 arc-second DEM** (approx 10m resolution).
 
 - **Format**: GeoTIFF (default)
 
-![Select 1/3 arc-second](screenshots/step3-usgs.png)
+![Select 1/3 arc-second](screenshots/step2-usgs.png)
 
 ## Step 4: Select Your Area
 
 Use the **Box/Point** tool to define your region.
 
-![Box Tool](screenshots/step4-usgs.png)
+![Box Tool](screenshots/step3-usgs.png)
 
 ### For Pacific Northwest (PNW)
 
 To match the tutorial preset, click **Coordinates** and enter:
 
-- **North**: 49.0
-- **South**: 41.75
-- **East**: -116.0
-- **West**: -125.5
+- **North** (Ymax): 49.0
+- **South** (Ymin): 41.75
+- **East** (Xmax): -116.0
+- **West** (Xmin): -125.5
 
 ![Enter Coordinates](screenshots/step3.5-usgs.png)
 
 ### For Custom Areas
 
 Simply draw a box around your desired region on the map.
+
+![Box Example](screenshots/step4-usgs.png)
 
 ## Step 5: Search
 
@@ -67,10 +69,12 @@ You will see a list of results (tiles).
 
 ## What's Next?
 
-Once downloaded, place all ZIP files in a folder and run the processing script:
+Once downloaded, move all ZIP files to the `data/` folder in this repository.
+
+Then run the processing script:
 
 ```powershell
-.\scripts\2_process_data.ps1 -SourceZipDir "path/to/downloads"
+.\scripts\2_process_data.ps1
 ```
 
 ![Example Output](screenshots/example-output.png)

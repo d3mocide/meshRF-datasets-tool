@@ -7,9 +7,7 @@
 #>
 
 param(
-    [Parameter(Mandatory = $true)]
-    [string]$SourceZipDir, # Path to folder containing downloaded ZIPs
-
+    [string]$SourceZipDir = "..\data", # Default to project data folder
     [string]$TargetDataDir = "..\data\ned10m" # Relative path to project data dir
 )
 
