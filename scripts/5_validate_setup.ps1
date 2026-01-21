@@ -30,12 +30,12 @@ else {
         $AllGood = $false
     }
     else {
-        Write-Host "✓ Found $($files.Count) .tif files." -ForegroundColor Green
+        Write-Host "[OK] Found $($files.Count) .tif files." -ForegroundColor Green
         
         # Spot check strict naming
         $sample = $files[0].Name
-        if ($sample -match "^[nNsS]\d{2}[wWeE]\d{3}\.tif$") {
-            Write-Host "✓ File naming looks correct (e.g. $sample)" -ForegroundColor Green
+        if ($sample -match '^[nNsS]\d{2}[wWeE]\d{3}\.tif$') {
+            Write-Host "[OK] File naming looks correct (e.g. $sample)" -ForegroundColor Green
         }
         else {
             Write-Warning "Naming might be non-standard ($sample). Standard is nXXwYYY.tif."
@@ -46,7 +46,7 @@ else {
 # Config check
 $ConfigPath = Join-Path $PSScriptRoot "..\data\config.yaml"
 if (Test-Path $ConfigPath) {
-    Write-Host "✓ config.yaml detected." -ForegroundColor Green
+    Write-Host "[OK] config.yaml detected." -ForegroundColor Green
 }
 else {
     Write-Warning "config.yaml not found in data/ directory."
