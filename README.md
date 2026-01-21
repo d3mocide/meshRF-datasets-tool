@@ -1,6 +1,6 @@
 # MeshRF Dataset Setup
 
-This toolkit allows you to download and configure 10m resolution terrain data (NED/3DEP) for **any region** in the US, including the Pacific Northwest.
+This toolkit allows you to download and configure 10m resolution terrain data (NED/3DEP) for **any region** in the US, including the Pacific Northwest as an example.
 
 ## Quick Start (PNW Region)
 
