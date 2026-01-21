@@ -9,7 +9,8 @@ If you just want the standard Washington/Oregon dataset:
 1.  Download the PNW data following the steps in [DOWNLOAD_GUIDE.md](./DOWNLOAD_GUIDE.md) (Step 4 details the PNW coords).
 2.  Download the files & move them to a folder.
 3.  Run `.\scripts\2_process_data.ps1 -SourceZipDir "path/to/downloads"`.
-4.  Run `.\scripts\3_auto_configure.ps1`.
+4.  (Optional) Run `.\scripts\3_compress_data.ps1` to save disk space.
+5.  Run `.\scripts\4_auto_configure.ps1`.
 
 ## Custom Region Guide
 
@@ -31,24 +32,36 @@ Run:
 - This extracts the USGS data and renames it to the format MeshRF needs.
 - It automatically handles any coordinate (North/South/East/West).
 
-### 3. Generate Config
+### 3. Compress Data (Optional)
 
 Run:
 
 ```powershell
-.\scripts\3_auto_configure.ps1
+.\scripts\3_compress_data.ps1
+```
+
+- This step compresses the huge GeoTIFF files using LZW (lossless).
+- It typically reduces the dataset size by **50% or more**.
+- Requires **GDAL** installed (the script will tell you if you need it).
+
+### 4. Generate Config
+
+Run:
+
+```powershell
+.\scripts\4_auto_configure.ps1
 ```
 
 - This script **scans your processed files** to find the exact latitude/longitude bounds.
 - It updates (or creates) `data/config.yaml` automatically.
 - It prints the environment variables you need to check in `docker-compose.yml`.
 
-### 4. Verify
+### 5. Verify
 
 Run:
 
 ```powershell
-.\scripts\4_validate_setup.ps1
+.\scripts\5_validate_setup.ps1
 ```
 
 ## Directory Info

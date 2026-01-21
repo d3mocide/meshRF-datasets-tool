@@ -20,4 +20,4 @@ eslint.config.js
 
 # Build Artifacts
 AI_Research
-data
+data/*
