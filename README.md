@@ -7,10 +7,10 @@ This toolkit allows you to download and configure 10m resolution terrain data (N
 If you just want the standard Washington/Oregon dataset:
 
 1.  Download the PNW data following the steps in [DOWNLOAD_GUIDE.md](./DOWNLOAD_GUIDE.md) (Step 4 details the PNW coords).
-2.  Move the downloaded ZIP files to the `data/` folder.
-3.  Run `.\scripts\2_process_data.ps1`.
-4.  (Optional) Run `.\scripts\3_compress_data.ps1` to save disk space.
-5.  Run `.\scripts\4_auto_configure.ps1`.
+2.  Move the downloaded ZIP files or tiffs to the `data/` folder.
+3.  Run `PowerShell -ExecutionPolicy Bypass -File .\scripts\2_process_data.ps1`.
+4.  (Optional) Run `PowerShell -ExecutionPolicy Bypass -File .\scripts\3_compress_data.ps1` to save disk space.
+5.  Run `PowerShell -ExecutionPolicy Bypass -File .\scripts\4_auto_configure.ps1`.
 
 ## Custom Region Guide
 
@@ -27,7 +27,7 @@ To set up MeshRF for your own area (e.g., Texas, California, etc.):
 2.  Run:
 
 ```powershell
-.\scripts\2_process_data.ps1
+PowerShell -ExecutionPolicy Bypass -File .\scripts\2_process_data.ps1
 ```
 
 - This extracts the USGS data and renames it to the format MeshRF needs.
@@ -38,19 +38,20 @@ To set up MeshRF for your own area (e.g., Texas, California, etc.):
 Run:
 
 ```powershell
-.\scripts\3_compress_data.ps1
+PowerShell -ExecutionPolicy Bypass -File .\scripts\3_compress_data.ps1
 ```
 
 - This step compresses the huge GeoTIFF files using LZW (lossless).
 - It typically reduces the dataset size by **50% or more**.
 - Requires **GDAL** installed (the script will tell you if you need it).
+- You can download GDAL from [GISInternals](https://www.gisinternals.com/release.php) (look for the latest stable release and download the `-core.msi` installer).
 
 ### 4. Generate Config
 
 Run:
 
 ```powershell
-.\scripts\4_auto_configure.ps1
+PowerShell -ExecutionPolicy Bypass -File .\scripts\4_auto_configure.ps1
 ```
 
 - This script **scans your processed files** to find the exact latitude/longitude bounds.
@@ -62,7 +63,7 @@ Run:
 Run:
 
 ```powershell
-.\scripts\5_validate_setup.ps1
+PowerShell -ExecutionPolicy Bypass -File .\scripts\5_validate_setup.ps1
 ```
 
 ## Directory Info

@@ -7,8 +7,12 @@
 #>
 
 param(
-    [string]$DataDir = "..\data\ned10m"
+    [string]$DataDir
 )
+
+if (-not $DataDir) {
+    $DataDir = Join-Path $PSScriptRoot "..\data\ned10m"
+}
 
 $DataDir = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($DataDir)
 
@@ -70,7 +74,8 @@ datasets:
 
 Write-Host ""
 Write-Host "File created: config.yaml" -ForegroundColor Green
-Set-Content -Path "..\data\config.yaml" -Value $configContent -Force
+$ConfigPath = Join-Path $PSScriptRoot "..\data\config.yaml"
+Set-Content -Path $ConfigPath -Value $configContent -Force
 
 Write-Host ""
 Write-Host "Update your docker-compose.yml with:" -ForegroundColor Cyan

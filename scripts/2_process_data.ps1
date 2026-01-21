@@ -7,8 +7,8 @@
 #>
 
 param(
-    [string]$SourceZipDir = "..\data", # Default to project data folder
-    [string]$TargetDataDir = "..\data\ned10m" # Relative path to project data dir
+    [string]$SourceZipDir = ".\data", # Default to project data folder
+    [string]$TargetDataDir = ".\data\ned10m" # Relative path to project data dir
 )
 
 $ErrorActionPreference = "Stop"

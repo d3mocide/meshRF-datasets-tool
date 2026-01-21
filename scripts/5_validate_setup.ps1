@@ -7,8 +7,12 @@
 #>
 
 param(
-    [string]$DataDir = "..\data\ned10m"
+    [string]$DataDir
 )
+
+if (-not $DataDir) {
+    $DataDir = Join-Path $PSScriptRoot "..\data\ned10m"
+}
 
 $DataDir = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($DataDir)
 $AllGood = $true
@@ -40,8 +44,8 @@ else {
 }
 
 # Config check
-$configPath = Resolve-Path "..\data\config.yaml" -ErrorAction SilentlyContinue
-if ($configPath) {
+$ConfigPath = Join-Path $PSScriptRoot "..\data\config.yaml"
+if (Test-Path $ConfigPath) {
     Write-Host "✓ config.yaml detected." -ForegroundColor Green
 }
 else {
