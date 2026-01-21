@@ -17,10 +17,6 @@ To set up MeshRF for your own area (e.g., Texas, California, etc.):
 
 ### 1. Download Data
 
-### 1. Download Data
-
-Follow the steps in [DOWNLOAD_GUIDE.md](./DOWNLOAD_GUIDE.md).
-
 1.  Open [DOWNLOAD_GUIDE.md](./DOWNLOAD_GUIDE.md) to see how to target your specific area.
 2.  Download the ZIP files as instructed.
 
